@@ -161,7 +161,6 @@ clean:
 # -c "stm32f0x mass_erase 0"
 	$(Q)$(OOCD) -f interface/$(OOCD_INTERFACE).cfg \
 		    -f board/$(OOCD_BOARD).cfg \
-		    -f robo.cfg \
 		    -c "init" -c "reset halt" \
 		    -c "flash write_image erase unlock $(*).hex" \
 		    -c "reset" \

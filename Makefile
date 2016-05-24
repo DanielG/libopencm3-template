@@ -23,3 +23,5 @@ SOURCES = myprog.c
 LDSCRIPT = $(BINARY).ld
 
 include libopencm3.target.mk
+
+cleanall: clean

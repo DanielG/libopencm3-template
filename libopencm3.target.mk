@@ -18,12 +18,12 @@
 ## along with this library.  If not, see <http://www.gnu.org/licenses/>.
 ##
 
-FAMILY          = 0
+FAMILY          = 4
 
 LIBNAME		= opencm3_stm32f$(FAMILY)
 DEFS		+= -DSTM32F$(FAMILY)
 
-FP_FLAGS	?= -msoft-float
+FP_FLAGS	?= -mfloat-abi=hard -mfpu=fpv4-sp-d16
 ARCH_FLAGS	= -mthumb -mcpu=cortex-m$(FAMILY) $(FP_FLAGS)
 
 ################################################################################
@@ -31,6 +31,6 @@ ARCH_FLAGS	= -mthumb -mcpu=cortex-m$(FAMILY) $(FP_FLAGS)
 
 OOCD		?= openocd
 OOCD_INTERFACE	?= stlink-v2
-OOCD_BOARD	?= stm32f0discovery
+OOCD_BOARD	?= stm32f4discovery
 
 include libopencm3.rules.mk
